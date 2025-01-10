@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="grand-cypher",
-    version="0.4.0",
+    version="0.12.0",
     author="Jordan Matelsky",
     author_email="opensource@matelsky.com",
     description="Query Grand graphs using Cypher",
@@ -15,13 +15,12 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
     install_requires=[
         "grandiso",
-        "lark-parser",
+        "lark",
         "networkx",
     ],
 )

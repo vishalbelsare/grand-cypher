@@ -1,10 +1,10 @@
 <h1 align=center>GrandCypher</h1>
 <div align=center><img src="https://img.shields.io/pypi/v/grand-cypher?style=for-the-badge" /> <img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/actions/workflow/status/aplbrain/grand-cypher/python-package.yml?branch=master&style=for-the-badge"></div>
 
-
-
 ```shell
 pip install grand-cypher
+# Note: You will want a version of grandiso>=2.2.0 for best performance!
+# pip install -U 'grandiso>=2.2.0'
 ```
 
 GrandCypher is a partial (and growing!) implementation of the Cypher graph query language written in Python, for Python data structures.
@@ -26,6 +26,8 @@ WHERE A.club == "Mr. Hi"
 RETURN A.club, B.club
 """)
 ```
+
+See [examples.md](docs/examples.md) for more!
 
 ### Example Usage with SQL
 
@@ -60,30 +62,34 @@ RETURN
 
 # Feature Parity
 
-| Feature                                    | Support              |     |
-| ------------------------------------------ | -------------------- | --- |
-| Multiple `MATCH` clauses                   | ✅                   |     |
-| `WHERE`-clause filtering on nodes          | ✅                   |     |
-| Anonymous `-[]-` edges                     | ✅                   |     |
-| `LIMIT`                                    | ✅                   |     |
-| `SKIP`                                     | ✅                   |     |
-| Node/edge attributes with `{}` syntax      | ✅                   |     |
-| `WHERE`-clause filtering on edges          | ✅                   |     |
-| Named `-[]-` edges                         | ✅                   |     |
-| Chained `()-[]->()-[]->()` edges           | ✅ Thanks @khoale88! |     |
-| Backwards `()<-[]-()` edges                | ✅ Thanks @khoale88! |     |
-| Anonymous `()` nodes                       | ✅ Thanks @khoale88! |     |
-| Undirected `()-[]-()` edges                | ✅ Thanks @khoale88! |     |
-| Boolean Arithmetic (`AND`/`OR`)            | ✅ Thanks @khoale88! |     |
-| `OPTIONAL MATCH`                           | 🛣                   |     |
-| `(:Type)` node-labels                      | ✅ Thanks @khoale88! |     |
-| `[:Type]` edge-labels                      | ✅ Thanks @khoale88! |     |
-| Graph mutations (e.g. `DELETE`, `SET`,...) | 🛣                   |     |
+| Feature                                                     | Support               |
+| ----------------------------------------------------------- | --------------------- |
+| Multiple `MATCH` clauses                                    | ✅                    |
+| `WHERE`-clause filtering on nodes                           | ✅                    |
+| Anonymous `-[]-` edges                                      | ✅                    |
+| `LIMIT`                                                     | ✅                    |
+| `SKIP`                                                      | ✅                    |
+| Node/edge attributes with `{}` syntax                       | ✅                    |
+| `WHERE`-clause filtering on edges                           | ✅                    |
+| Named `-[]-` edges                                          | ✅                    |
+| Chained `()-[]->()-[]->()` edges                            | ✅ Thanks @khoale88!  |
+| Backwards `()<-[]-()` edges                                 | ✅ Thanks @khoale88!  |
+| Anonymous `()` nodes                                        | ✅ Thanks @khoale88!  |
+| Undirected `()-[]-()` edges                                 | ✅ Thanks @khoale88!  |
+| Boolean Arithmetic (`AND`/`OR`)                             | ✅ Thanks @khoale88!  |
+| `(:Type)` node-labels                                       | ✅ Thanks @khoale88!  |
+| `[:Type]` edge-labels                                       | ✅ Thanks @khoale88!  |
+| `DISTINCT`                                                  | ✅ Thanks @jackboyla! |
+| `ORDER BY`                                                  | ✅ Thanks @jackboyla! |
+| Aggregation functions (`COUNT`, `SUM`, `MIN`, `MAX`, `AVG`) | ✅ Thanks @jackboyla! |
+| Aliasing of returned entities (`return X as Y`)             | ✅ Thanks @jackboyla! |
+| Negated edges (`where not (a)-->(b)`)                       | 🥺                    |
+| `OPTIONAL MATCH`                                            | 🥺                    |
+| Graph mutations (e.g. `DELETE`, `SET`,...)                  | 🥺                    |
 
-
-|                |                |                  |
-| -------------- | -------------- | ---------------- |
-| ✅ = Supported | 🛣 = On Roadmap | 🔴 = Not Planned |
+|                |                |                   |                  |
+| -------------- | -------------- | ----------------- | ---------------- |
+| ✅ = Supported | 🛣 = On Roadmap | 🥺 = Help Welcome | 🔴 = Not Planned |
 
 ## Citing
 
